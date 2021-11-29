@@ -11,14 +11,17 @@ django 3.2.9
 Pillow 8.4.0
 
 *Chạy web
+
 1. Thiết lập môi trường phát triển Python. Cài framework django bằng câu lệnh
+
     pip install django
     
 sau đó cài Pillow bằng câu lệnh(nếu chưa có)
+
     pip install pillow
 
 
-2.Khi đã thiết lập môi trường:
+2. Khi đã thiết lập môi trường:
 
 
     python manage.py makemigrations
