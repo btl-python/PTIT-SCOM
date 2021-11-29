@@ -6,7 +6,9 @@ ngoài ra người dùng có thể thay đổi ảnh đại diện và tổng c�
 Người quản trị trang web sẽ có các tính năng bổ sung như xóa tất cả các bài viết, bình luận và xóa cả người dùng.
 Trang web sử dụng:
 Python 3.10.0
+
 django 3.2.9
+
 Pillow 8.4.0
 
 *Chạy web
