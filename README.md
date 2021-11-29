@@ -23,10 +23,12 @@ sau đó cài Pillow bằng câu lệnh(nếu chưa có)
 
 2. Khi đã thiết lập môi trường:
 
-
     python manage.py makemigrations
+    
     python manage.py migrate
+    
     python manage.py createsuperuser # Co the khong can (admin co san username: Admin1 password:admin1)
+    
     python manage.py runserver
 
 3. Mở trình duyệt tới localhost:8000/admin/ (http://127.0.0.1:8000/admin/) để mở trang web quản trị
