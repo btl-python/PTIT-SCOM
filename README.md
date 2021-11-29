@@ -1,10 +1,7 @@
 *Web blog PTIT
-Ý tưởng tạo web blog cơ bản cho PTITer sử dụng django. 
-Trang web cho người dùng có thể đăng bài(hình ảnh, tiêu đề, bài viết), bình luận các bài viết, 
-đồng thời có thể xóa các bài viết, bình luận của mình, xem thông tin, bài viết của các blogger khác, 
-ngoài ra người dùng có thể thay đổi ảnh đại diện và tổng các bài viết cảu mình. 
-Người quản trị trang web sẽ có các tính năng bổ sung như xóa tất cả các bài viết, bình luận và xóa cả người dùng.
+Ý tưởng tạo web blog cơ bản cho PTITer sử dụng django. Trang web cho người dùng có thể đăng bài(hình ảnh, tiêu đề, bài viết), bình luận các bài viết, đồng thời có thể xóa các bài viết, bình luận của mình, xem thông tin, bài viết của các blogger khác, ngoài ra người dùng có thể thay đổi ảnh đại diện và tổng các bài viết cảu mình. Người quản trị trang web sẽ có các tính năng bổ sung như xóa tất cả các bài viết, bình luận và xóa cả người dùng.
 Trang web sử dụng:
+
 Python 3.10.0
 
 django 3.2.9
