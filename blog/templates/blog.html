@@ -1,0 +1,162 @@
+{% extends "home_base.html" %}
+  {% load static %}
+    {% block title %}
+    <title>Bài viết</title>
+    {% endblock %}
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/style_blog.css' %}">
+{% endblock %}
+{% block content %}
+
+<style>
+  .dangbai {
+    width: 250px;
+    background-color: #e3342f;
+    border: none;
+  }
+
+  #dropdownMenuButton2 {
+    background-color: #e3342f;
+    border: none;
+  }
+
+  .nut-search {
+    background-color: #e3342f;
+    border: none;
+  }
+</style>
+
+  <main>
+    <div class="container d-flex mt-5 justify-content-between text-center">
+      <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
+        tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalToggleLabel">Tạo bài viết</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="d-flex infor-modal">
+                <img src="{% static 'image/user.jpg' %}" alt="" width="35px">
+                <h6 class="ms-3 mt-2">{{ user.username }}</h6>
+              </div>
+
+              <div class="">
+                <div>
+                  <button style="border-radius: 5px; background-color:#e3342f; color: #fff;border: none;width: 120px;padding: 5px;"
+                    onclick="document.getElementById('getFile').click()">
+                    Tải ảnh lên <i class="fas fa-upload ms-1"></i>
+                  </button>
+                  
+
+                  <form action='' method='POST' enctype='multipart/form-data'>
+                    {% csrf_token %}
+                    <input type="file" id="getFile" name="upFile" style="display: none" />
+                    <input type="text" class="form-control" name="title" id="recipient-name" placeholder="Tiêu đề bài viết">
+                    <div class="input-group">
+                      <textarea class="form-control" name="bodyBlog" placeholder="Bạn đang nghĩ gì..."
+                        id="floatingTextarea2" style="height: 200px"></textarea>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="submit" class="btn btn-primary" data-bs-target="#exampleModalToggle2"
+                        data-bs-toggle="modal">Đăng</button>
+                    </div>
+                  </form>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="btn dangbai btn-primary fs-5" data-bs-toggle="modal" href="#exampleModalToggle" role="button">Đăng
+        bài</button>
+
+        <div class="input-group btn-search me-5">
+          <button class="micto-btn-search" id="microbutton" name="search" value="NO" onclick="micro()" style="border: 5px solid #e3342f; width: 50px; height: 50px;border-radius: 100%;margin-right: 10px;"><i class="fas fa-microphone"
+            style=""></i></button> 
+          <form class="d-flex" action='' method='POST' enctype='multipart/form-data'>
+            {% csrf_token %}
+            <div class=" mt-2">
+              <input name="keySearch" id="search-focus" type="search" id="form1" class="form-control pe-5 py-2"
+                placeholder="Search" />
+            </div>
+            <button type="submit" id="submitbutton" class="btn btn-primary nut-search mt-2 py-2 px-4">
+              <i class="fas fa-search"></i>
+            </button>
+          </form>
+        </div>
+
+      <div class="dropdown mt-2 btn-drop">
+        <button class="btn dropdown-toggle btn-primary fs-5 px-5" type="button" id="dropdownMenuButton2"
+          data-bs-toggle="dropdown" aria-expanded="false">
+          Ngành của bạn
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+          <li><a class="dropdown-item active" href="">Công nghệ thông tin </a></li>
+          <li><a class="dropdown-item" href="">An toàn thông tin</a></li>
+          <li><a class="dropdown-item" href="">Kế toán</a></li>
+          <li><a class="dropdown-item" href="">Quản trị kinh doanh</a></li>
+          <li><a class="dropdown-item" href="">Marketing</a></li>
+          <li><a class="dropdown-item" href="">Điện tử viễn thông</a></li>
+          <li><a class="dropdown-item" href="">Truyền thông đa phương tiện </a></li>
+        </ul>
+      </div>
+    </div>
+    {% comment %} post {% endcomment %}
+    <br>
+    <br>
+    <br>
+    {% for post in page_obj %}
+    <div class="works-container pt-0 pb-0">
+      <div class="works-content">
+        <div class="work d-flex justify-content-start">
+          <a  href='{% url "post" post.id %}' ">
+            {% if post.image %}
+            <img src="{{post.image.url}}" alt="" title="Xem chi tiết" style="width:300px" />
+            {% else %}
+            <img src="{% static 'image/hoc-vien-buu-chinh-vien-thong-ptit.jpg' %}" alt="" title="Xem chi tiết" />
+            {% endif %}</a>
+          <div class="work__text" style="flex:1">
+           <div class="d-flex justify-content-between mb-4">
+            <h3 style="flex: 1;"><a class="text-decoration-none" href='{% url "post" post.id %}'
+              style="color: #142850;">{{post.title}}</a></h3>
+              {% if user.is_superuser or post.auth.id == user.id  %}
+                <a href="{% url 'delete' post.id %}" style="color: #e3342f;flex: 0.15;">Xóa bài</a>
+              {% endif%}
+           </div>
+            <span class="work__text--year">{{post.date}}</span>
+            <span>by <strong>{{post.auth}}</strong></span>
+            <p>
+              {{post.threeLine|safe|linebreaks }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    {% endfor %}
+
+    {% comment %} end post {% endcomment %}
+    {% if page_obj.has_next or page_obj.has_previous %}
+    <div class="pre-next text-center mt-3 mb-5">
+      {% if page_obj.has_previous %}
+      <a href="{{request.path}}?page={{page_obj.previous_page_number}}"
+        style="font-size: 18px;color:#e3342f; margin-right: 20px;">Trang trước</a>
+      {% endif %}
+      {% if page_obj.has_next %}
+      <a href="{{request.path}}?page={{page_obj.next_page_number}}" style="font-size: 18px;color:#e3342f">Trang sau</a>
+      {% endif %}
+    </div>
+    {% endif %}
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="{% static 'js/speechtotext.js' %}"></script>
+
+
+  </main>
+  {% endblock %}
+  
+  

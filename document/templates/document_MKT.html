@@ -1,0 +1,88 @@
+ {% extends "document_base.html" %}
+ {% load static %}
+ {% block css%}
+    <link rel="stylesheet" href="{% static 'css/style_home.css' %}">
+ {% endblock %}
+ {% block content %}
+
+
+      <main>
+        <div class="select-clb">
+          <div class="dropdown mt-2 btn-drop text-end me-5">
+              <button class="btn dropdown-toggle fs-5 px-5 border-1 border-dark " type="button" id="dropdownMenuButton3"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                Marketing
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                <li><a class="dropdown-item active" href="{% url 'document' %}">Công nghệ thông tin</a></li>
+                <li><a class="dropdown-item" href="{% url 'document_ATTT' %}">An toàn thông tin</a></li>
+                <li><a class="dropdown-item" href="{% url 'document_QTKD' %}">Quản trị kinh doanh</a></li>
+                <li><a class="dropdown-item" href="{% url 'document_DTVT' %}">Điện tử viễn thông</a></li>
+                <li><a class="dropdown-item" href="{% url 'document_MKT' %}">Marketing</a></li>
+                <li><a class="dropdown-item" href="{% url 'document_KT' %}">Kế toán</a></li>
+              </ul>
+            </div>
+        </div>
+
+      <div class="content-book border py-3 mt-5">
+        <div class="sub-content-book d-flex justify-content-around text-center"  >
+          <div class="book-content">
+            <img src="{% static 'image/Toan kinh te.jpg' %}" alt="" style="width: 250px;margin-bottom: 10px;">
+            <a href="https://drive.google.com/file/d/1NRDS9PqjdCDogeRMwEJtW10GJgPS_njy/view?usp=sharing" class="fs-3 "><i class="fad fa-arrow-to-bottom"></i></a> Tải xuống
+            <h3>Toán kinh tế</h3>
+          </div>
+          <div class="book-content">
+            <img src="{% static 'image/Lich su hoc thuyet kinh te.jpg' %}" alt="" style="width: 250px;margin-bottom: 10px;">
+            <a href="https://drive.google.com/file/d/1NRDS9PqjdCDogeRMwEJtW10GJgPS_njy/view?usp=sharing" class="fs-3 "><i class="fad fa-arrow-to-bottom"></i></a> Tải xuống
+            <h3>Lịch sử các học thuyết kinh tế</h3>
+          </div>
+          <div class="book-content">
+            <img src="{% static 'image/Triet 1.jpg' %}" alt="" style="width: 250px;margin-bottom: 10px;">
+            <a href="https://drive.google.com/file/d/1NRDS9PqjdCDogeRMwEJtW10GJgPS_njy/view?usp=sharing" class="fs-3 "><i class="fad fa-arrow-to-bottom"></i></a> Tải xuống
+            <h3>Những nguyên lý cơ bản của chủ nghĩa Mac Lênin </h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-book border py-3 mt-5">
+        <div class="sub-content-book d-flex justify-content-around text-center"  >
+          <div class="book-content">
+            <img src="{% static 'image/Kinh te vi mo.jpg' %}" alt="" style="width: 250px;margin-bottom: 10px;">
+            <a href="https://drive.google.com/file/d/1NRDS9PqjdCDogeRMwEJtW10GJgPS_njy/view?usp=sharing" class="fs-3 "><i class="fad fa-arrow-to-bottom"></i></a> Tải xuống
+            <h3>Kinh tế vĩ mô</h3>
+          </div>
+          <div class="book-content">
+            <img src="{% static 'image/Toan cao cap 1.jpg' %}" alt="" style="width: 250px;margin-bottom: 10px;">
+            <a href="https://drive.google.com/file/d/1NRDS9PqjdCDogeRMwEJtW10GJgPS_njy/view?usp=sharing" class="fs-3 "><i class="fad fa-arrow-to-bottom"></i></a> Tải xuống
+            <h3>Toán cao cấp 1 </h3>
+          </div>
+          <div class="book-content">
+            <img src="{% static 'image/B1.jpg' %}" alt="" style="width: 250px;margin-bottom: 10px;">
+            <a href="https://drive.google.com/file/d/1NRDS9PqjdCDogeRMwEJtW10GJgPS_njy/view?usp=sharing" class="fs-3 "><i class="fad fa-arrow-to-bottom"></i></a> Tải xuống
+            <h3>Tiếng Anh B1</h3>
+          </div>
+        </div>
+      </div>
+      <div class="content-book border py-3 mt-5">
+        <div class="sub-content-book d-flex justify-content-around text-center"  >
+          <div class="book-content">
+            <img src="{% static 'image/Marketing can ban.jpg' %}" alt="" style="width: 250px;margin-bottom: 10px;">
+            <a href="https://drive.google.com/file/d/1NRDS9PqjdCDogeRMwEJtW10GJgPS_njy/view?usp=sharing" class="fs-3 "><i class="fad fa-arrow-to-bottom"></i></a> Tải xuống
+            <h3>Marketing dịch vụ</h3>
+          </div>
+          <div class="book-content">
+            <img src="{% static 'image/Marketing can ban.jpg' %}" alt="" style="width: 250px;margin-bottom: 10px;">
+            <a href="https://drive.google.com/file/d/1NRDS9PqjdCDogeRMwEJtW10GJgPS_njy/view?usp=sharing" class="fs-3 "><i class="fad fa-arrow-to-bottom"></i></a> Tải xuống
+            <h3>Marketing căn bản</h3>
+          </div>
+          <div class="book-content">
+            <img src="{% static 'image/Thuong mai dien tu.jpg' %}" alt="" style="width: 250px;margin-bottom: 10px;">
+            <a href="https://drive.google.com/file/d/1NRDS9PqjdCDogeRMwEJtW10GJgPS_njy/view?usp=sharing" class="fs-3 "><i class="fad fa-arrow-to-bottom"></i></a> Tải xuống
+            <h3>Thương mại điện tử</h3>
+          </div>
+        </div>
+      </div>
+
+      </main>
+
+ {% endblock %}

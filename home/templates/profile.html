@@ -1,0 +1,176 @@
+{% extends "home_base.html" %}
+{% load static %}
+{% block title %}
+<title> {{name}} </title>
+{% endblock %}
+  
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/style_home.css' %}">
+{% endblock %} 
+{% block content %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.0.45/css/materialdesignicons.min.css" integrity="sha256-nRyVCcVDSlWN9d68r9M+rKBLE4k9Cp1j3XSY/umjvvU=" crossorigin="anonymous" />
+<style>
+.cover-image {
+  position: relative;
+} 
+
+.avata-personal{
+  position: absolute;
+    top: 30%;
+    right: 35%;
+}
+
+.avata-img {
+  position: relative;
+}
+
+.image-add {
+  position: absolute;
+  bottom: 0;
+  right: 35px;
+}
+</style>
+
+<div class="">
+  <div class="d-flex text-center justify-content-center mb-5">
+        <div class="col-md-7">
+            <div class="card m-b-30">
+                <div class="card-body" style="height: 750px;">
+                    <div class="xp-social-profile">
+                        <div class="xp-social-profile-img cover-image">
+                            <div class=" " style="width:100%">
+                                    <img src="{% static 'image/cover-img.jpg' %}"  width="100%"
+                                     height="350" alt="img" style="margin-bottom: 10px;border-radius: 5px;">
+                            </div>
+                        </div>
+                        <div class="xp-social-profile-top d-flex justify-content-between">
+                            <div class="ro" >
+                                <div class="col-3 ms-5">
+                                    <div class="xp-social-profile-star py-3 ms-2">
+                                        <i class="mdi mdi-star font-24 ms-5"></i>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="xp-social-profile-avatar text-center avata-personal">
+                                        <div class="avata-img mb-4">
+                                          <img src="{{userprofile.avatar.url}}" alt="user-profile"
+                                          width=250 height=250 style="border: 5px solid #fff; border-radius: 100%;">
+                                          {% if user.id == id %}
+                                          <div class="container mt-3">
+                                            <button type="button" class="" data-bs-toggle="modal" data-bs-target="#myModal" style="position:absolute; top:175px;right:-80px;background-color:#fff;border:none;border-radius: 100%;">
+                                              <i class="fas fa-camera fs-2" style="background-color:#ccc;border-radius: 100%; padding: 10px;"></i> Thay avata
+                                            </button>
+                                          </div>
+                                          <div class="modal" id="myModal">
+                                            <div class="modal-dialog modal-dialog-centered">
+                                              <div class="modal-content">
+                                                <div class="modal-header">
+                                                  <h4 class="modal-title">Thay avata</h4>
+                                                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                  <div>
+                                                    <button style="border-radius: 5px; background-color:#e3342f; color: #fff;border: none;width: 120px;padding: 5px;"
+                                                      onclick="document.getElementById('getFile').click()">
+                                                      Tải ảnh lên <i class="fas fa-upload ms-1"></i>
+                                                    </button>
+                                                    
+                                  
+                                                    <form action='' method='POST' enctype='multipart/form-data'>
+                                                      {% csrf_token %}
+                                                      <input type="file" id="getFile" name="upAvatar" style="display: none" />
+                                                      <div class="">
+                                                        <button type="submit" class="btn btn-primary" data-bs-target="#exampleModalToggle2"
+                                                          data-bs-toggle="modal">Lưu avata</button>
+                                                      </div>
+                                                    </form>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          {% endif %}
+                                          <form action='' method='POST' enctype='multipart/form-data'>
+                                            <!-- <input type="file" id="getFile" name="upFile" style="display: none" /> -->
+                                          </form>
+                                        </div>
+                                        <span class="xp-social-profile-live"></span>
+                                        <div class="xp-social-profile-middle text-center">
+                                          <div class="row">
+                                              <div class="col-12">
+                                                  <div class="xp-social-profile-title">
+                                                      <h5 class="my-1 text-black" style="font-size: 50px;">{{User.username}}</h5>
+                                                  </div>
+                                                  <div class="xp-social-profile-subtitle">
+                                                      <p class="mb-3 text-muted">{{User.email}}</p>
+                                                  </div>
+                                                  <div class="xp-social-profile-desc">
+                                                      <p class="text-muted"> IT-vua của mọi ngành </p>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <div class="xp-social-profile-bottom text-center">
+                                                <div class="xp-social-profile-media justify-content-center">
+                                                  <p class="mb-0 text-muted"><strong>Tổng số bài viết</strong></p>
+                                                    <h5 class="my-1" style="color: #e3342f;">{{soPost}}</h5>
+                                                </div>
+                                            </div>
+                                    </div>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="xp-social-profile-menu text-right py-3">
+                                        <i class="mdi mdi-dots-horizontal font-24"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+ {% for post in pages_obj %}
+    <div class="works-container pt-0 pb-0">
+      <div class="works-content">
+        <div class="work d-flex justify-content-start">
+          <a  href='{% url "post" post.id %}' ">
+            {% if post.image %}
+            <img src="{{post.image.url}}" alt="" title="Xem chi tiết" style="width:300px" />
+            {% else %}
+            <img src="{% static 'image/hoc-vien-buu-chinh-vien-thong-ptit.jpg' %}" alt="" title="Xem chi tiết" />
+            {% endif %}</a>
+          <div class="work__text" style="flex:1">
+           <div class="d-flex justify-content-between mb-4">
+            <h3 style="flex: 1;"><a class="text-decoration-none" href='{% url "post" post.id %}'
+              style="color: #142850;">{{post.title}}</a></h3>
+              {% if user.is_superuser or post.auth.id == user.id  %}
+                <a href="{% url 'delete' post.id %}" style="color: #e3342f;flex: 0.15;">Xóa bài</a>
+              {% endif%}
+           </div>
+            <span class="work__text--year">{{post.date}}</span>
+            <span>by <strong>{{post.auth}}</strong></span>
+            <p>
+              {{post.threeLine|safe|linebreaks }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    {% endfor %}
+    
+    {% if pages_obj.has_next or pages_obj.has_previous %}
+    <div class="pre-next text-center mt-3 mb-5">
+      {% if pages_obj.has_previous %}
+      <a href="{{request.path}}?page={{pages_obj.previous_page_number}}"
+        style="font-size: 18px;color:#e3342f; margin-right: 20px;">Trang trước</a>
+      {% endif %}
+      {% if pages_obj.has_next %}
+      <a href="{{request.path}}?page={{pages_obj.next_page_number}}" style="font-size: 18px;color:#e3342f;">Trang sau</a>
+      {% endif %}
+    </div>
+    {% endif %}
+{% endblock %} 

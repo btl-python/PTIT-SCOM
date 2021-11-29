@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+  <title>PTIT SCom</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="{% static 'image/logo_ptit.png' %}">
+  <link rel="stylesheet" href="{% static 'css/base_login.css' %}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+</head>
+
+<style>
+
+  .modal.show {
+      display: block;
+      background-color: rgba(0,0,0,0.5);
+  }
+  </style>
+<body>
+  <header class="">
+    <nav class="
+        d-flex
+        align-items-center
+        justify-content-between
+        navbar-expand-sm
+        px-md-4
+        ps-3
+        px-lg-5
+        py-sm-2 py-2
+        border-bottom
+      ">
+      <img src="{% static 'image/logo_ptit.png' %}" class="bg-light rounded-circle" alt="" width="37px" height="37px">
+
+      <button class="navbar-toggler">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <div class="navbar-nav d-none d-sm-inline-block">
+        <ul class="navbar-nav header-menu">
+          <li class="nav-item border-dark">
+            <a class="nav-link text-light blog" href="{% url 'blog' %}" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
+            data-bs-whatever="@mdo">TRANG CHỦ </a>
+          </li>
+          <li class="nav-item border-dark">
+            <a class="nav-link text-light blog" href="{% url 'blog' %}" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
+            data-bs-whatever="@mdo">BÀI VIẾT </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="#" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
+            data-bs-whatever="@mdo">LINKS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="#" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
+            data-bs-whatever="@mdo">TÀI LIỆU</a>
+          </li>
+          <li class="d-flex justify-content-around nav-item mt-2 me-5">
+            <div class="me-3">
+              <button type="button" class="header-login" data-bs-toggle="modal" data-bs-target="#exampleModal"
+              data-bs-whatever="@mdo">Đăng Ký</button>
+
+            <div class="modal fade show" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog-centered modal-dialog">
+                <div class="modal-content" id="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Đăng nhập</h5>
+                    <button type="button" id="close-modal" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="text-center">
+                    {%if loi %}
+                    <p style="color: red; margin-bottom: -20px ; margin-top: 10px;">{{loi}}</p>
+                  {%endif %}
+                  </div>
+                  <div class="modal-body mt-3">
+                    <form name='register' action="" method="POST">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Tên người dùng</label>
+                            <input name="user_digit" type="text" class="form-control" id="" placeholder="abcxyz">
+                            
+                        </div>
+                        <div class="mb-3">
+                            <label for="message-text" class="col-form-label">Email</label>
+                            <input name="email_digit" type="text" class="form-control" id="" placeholder="abc123@gmail.com">
+                        </div>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Mật khẩu</label>
+                            <input name="pass1_digit" type="password" class="form-control" id="" placeholder="*********">
+                        </div>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Xác nhận mật khẩu</label>
+                            <input name="pass2_digit" type="password" class="form-control" id="" placeholder="*********">
+                        </div>
+                        <div class="text-center mb-3">
+                            <button type="submit" class="btn btn-primary">Đăng Kí</button>
+                        </div>
+                    </form>
+
+                    <div class="login__free">
+                      <p >Bạn đã có tài khoản? <a href="{% url 'login'%}">Đăng nhập</a></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> 
+            <div> 
+            </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+
+
+
+
+  <div class="container my-5 ">
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+          aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+          aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="{% static 'image/slider1.png' %}" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5></h5>
+            <p></p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="{% static 'image/slider2.jpg' %}" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5></h5>
+            <p></p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="{% static 'image/slider3.jpg' %}" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5></h5>
+
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev " type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+
+
+  <div class="container px-5  developer">
+    <div class="row gx-5 text-center">
+      <div class="col-12 col-lg-4  mb-5 mb-lg-0">
+        <img src="{% static 'image/Nam.jpg' %}" alt="">
+        <h3 class="mt-4">Đặng Nam</h3> 
+        <h5>Font-end</h5>
+        <p class="mt-4 fst-italic">"Life is like riding a bicycle.To keep<br> your balance, you must keep moving."</p>
+      </div>
+
+      <div class="col-12  col-lg-4 mb-5 mb-lg-0 chamngon">
+        <img src="{% static 'image/Nghiem.jpg' %}" alt="">
+        <h3 class="mt-4">Nghiêm Hunter</h3>
+        <h5>Back-end</h5>
+        <p class="mt-4 fst-italic">"You only live once,<br> but if you do it right, once is enough."</p>
+      </div>
+
+      <div class="col-12  col-lg-4 mb-5 mb-lg-0">
+        <img src="{% static 'image/Dat.jpg' %}" alt="">
+        <h3 class="mt-4">Minh Đạt</h3>
+        <h5>Data-base</h5>
+        <p class="mt-4 fst-italic">"Sometimes the questions are complicated and the answers are simple."</p>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <footer class="text-center bg-light text-muted pt-3 border-top border-2">
+
+    <section class="">
+      <div class="container text-center text-md-start mt-5">
+        <div class="row mt-3">
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <h6 class="text-uppercase fw-bold mb-4">
+              <i class="fas fa-gem me-3"></i>PTIT SCom
+            </h6>
+            <p>
+              Trang web dành riêng cho cộng đồng sinh viên Học viện Công nghệ Bưu chính Viễn thông.
+              Nơi trao đổi, chia sẻ các thông tin, kinh nghiệm trong học tập và cuộc sống của sinh viên PTIT ^^
+            </p>
+          </div>
+
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <h6 class="text-uppercase fw-bold mb-4">
+              Địa chỉ          
+            </h6>
+            <p >HỌC VIỆN CÔNG NGHỆ BƯU CHÍNH VIỄN THÔNG:</p>
+            <p>
+              <a href="#!" class="text-decoration-none ">
+                Km10, Đường Nguyễn Trãi, Q.Hà Đông, Hà Nội</a>
+            </p>
+            <p>
+              <a href="#!" class="text-decoration-none  ">Đường Man Thiện, P. Hiệp Phú, Q.9 TP Hồ Chí Minh</a>
+            </p>
+          </div>
+
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <h6 class="text-uppercase fw-bold mb-4">
+            MẠNG XÃ HỘI
+            </h6>
+            <p>
+              <a href="https://www.facebook.com/nghiemhunter1904/" class="text-decoration-none "><i class="fab fa-facebook-square"></i>: facebook</a> 
+            </p>
+            <p>
+              <a href="https://www.instagram.com/nghiem_hunter_1904/" class="text-decoration-none "><i class="fab fa-instagram"></i>  : instagram</a>
+            </p>
+            <p>
+              <a href="#!" class="text-decoration-none "><i class="fab fa-google"></i>: google</a>
+            </p>
+            <p>
+              <a href="https://twitter.com/BLACKPINK" class="text-decoration-none "><i class="fab fa-twitter-square"></i> : twitter</a>
+            </p>
+          </div>
+
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <h6 class="text-uppercase fw-bold mb-4">
+              Contact
+            </h6>
+            <p><i class="fas fa-home me-3"></i>Hà Nội</p>
+            <p>
+              <i class="fas fa-envelope me-3"></i>
+              ptitscom.admin@gmail.com
+            </p>
+            <p><i class="fas fa-phone me-3"></i>+ 84 123 456 790</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+      © 2021 Copyright:
+      <a class="text-reset fw-bold" href="https://mdbootstrap.com/">TeamLoser</a>
+    </div>
+  </footer>
+
+  <script>
+    const closeModal = document.getElementById('close-modal')
+    const modalLogin = document.getElementById('exampleModal')
+    const content = document.getElementById('modal-content')
+
+    function hideModal(){
+      modalLogin.classList.remove('show')
+    }
+
+    closeModal.addEventListener('click',hideModal)
+    modalLogin.addEventListener('click',hideModal)
+    content.addEventListener('click', function(event) {
+      event.stopPropagation()
+    })
+  </script>
+
+</body>
+
+</html>

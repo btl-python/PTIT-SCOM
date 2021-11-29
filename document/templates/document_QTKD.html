@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tài Liệu</title>
+    <link rel="icon" href="{% static 'image/logo_ptit.png' %}">
+    <link rel="stylesheet" href="{% static 'css/style_home.css' %}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+</head>
+<body>
+    <header class="">
+        <nav class="
+            d-flex
+            align-items-center
+            justify-content-between
+            navbar-expand-sm
+            px-md-4
+            ps-3
+            px-lg-5
+            py-sm-2 py-2
+            border-bottom
+          ">
+          <img src="{% static 'image/logo_ptit.png' %}" class="bg-light rounded-circle" alt="" width="30px" height="30px">
+    
+          <button class="navbar-toggler">
+            <i class="fas fa-bars"></i>
+          </button>
+    
+          <div class="navbar-nav d-none d-sm-inline-block">
+            <ul class="navbar-nav header-menu">
+              <li class="nav-item">
+                <a class="nav-link text-light" href="{% url 'home' %}">TRANG CHỦ</a>
+              </li>
+              <li class="nav-item border-dark">
+                <a class="nav-link text-light blog" href="{% url 'blog' %}">BÀI VIẾT</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="{% url 'link' %}">LINKS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="{% url 'document' %}">TÀI LIỆU</a>
+              </li>
+              <li class="nav-item mt-2 me-5">
+    
+                <div class="dropdown">
+                  <button type="button" class="border-0 dropdown-toggle btn-user" data-bs-toggle="dropdown">
+                      <i class="fas fa-user"></i>
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <h5 class="dropdown-header border-bottom">tên</h5>
+                    </li>
+                    <li><a class="dropdown-item border-top" href="{% url 'logout' %}">Đăng xuất</a></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+          </div>
+          </li>
+          </ul>
+          </div>
+        </nav>
+      </header>
+
+
+      <main>
+        <div class="select-clb">
+          <div class="dropdown mt-2 btn-drop text-end me-5">
+              <button class="btn dropdown-toggle fs-5 px-5 border-1 border-dark " type="button" id="dropdownMenuButton3"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                Quản trị kinh doanh
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                <li><a class="dropdown-item active" href="{% url 'document' %}">Công nghệ thông tin</a></li>
+                <li><a class="dropdown-item" href="{% url 'document_ATTT' %}">An toàn thông tin</a></li>
+                <li><a class="dropdown-item" href="{% url 'document_QTKD' %}">Quản trị kinh doanh</a></li>
+                <li><a class="dropdown-item" href="{% url 'document_DTVT' %}">Điện tử viễn thông</a></li>
+                <li><a class="dropdown-item" href="{% url 'document_MKT' %}">Marketing</a></li>
+                <li><a class="dropdown-item" href="{% url 'document_KT' %}">Kế toán</a></li>
+              </ul>
+            </div>
+        </div>
+
+      <div class="content-book border py-3 mt-5">
+        <div class="sub-content-book d-flex justify-content-around text-center"  >
+          <div class="book-content">
+            <img src="{% static 'image/He thong thong tin quan ly.jpg' %}" alt="" style="width: 250px;margin-bottom: 10px;">
+            <a href="https://drive.google.com/file/d/1NRDS9PqjdCDogeRMwEJtW10GJgPS_njy/view?usp=sharing" class="fs-3 "><i class="fad fa-arrow-to-bottom"></i></a> Tải xuống
+            <h3>Hệ thống thông tin quản lý</h3>
+          </div>
+          <div class="book-content">
+            <img src="{% static 'image/Thong ke doanh nghiep.jpg' %}" alt="" style="width: 250px;margin-bottom: 10px;">
+            <a href="https://drive.google.com/file/d/1NRDS9PqjdCDogeRMwEJtW10GJgPS_njy/view?usp=sharing" class="fs-3 "><i class="fad fa-arrow-to-bottom"></i></a> Tải xuống
+            <h3>Thống kê doanh nghiệp </h3>
+          </div>
+          <div class="book-content">
+            <img src="{% static 'image/Triet 1.jpg' %}" alt="" style="width: 250px;margin-bottom: 10px;">
+            <a href="https://drive.google.com/file/d/1NRDS9PqjdCDogeRMwEJtW10GJgPS_njy/view?usp=sharing" class="fs-3 "><i class="fad fa-arrow-to-bottom"></i></a> Tải xuống
+            <h3>Những nguyên lý cơ bản của chủ nghĩa Mac Lênin </h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-book border py-3 mt-5">
+        <div class="sub-content-book d-flex justify-content-around text-center"  >
+          <div class="book-content">
+            <img src="{% static 'image/Quan tri san xuat.jpg' %}" alt="" style="width: 250px;margin-bottom: 10px;">
+            <a href="https://drive.google.com/file/d/1NRDS9PqjdCDogeRMwEJtW10GJgPS_njy/view?usp=sharing" class="fs-3 "><i class="fad fa-arrow-to-bottom"></i></a> Tải xuống
+            <h3>Quản trị sản xuất</h3>
+          </div>
+          <div class="book-content">
+            <img src="{% static 'image/Tin hoc quan ly.jpg' %}" alt="" style="width: 250px;margin-bottom: 10px;">
+            <a href="https://drive.google.com/file/d/1NRDS9PqjdCDogeRMwEJtW10GJgPS_njy/view?usp=sharing" class="fs-3 "><i class="fad fa-arrow-to-bottom"></i></a> Tải xuống
+            <h3>Tin học quản lý </h3>
+          </div>
+          <div class="book-content">
+            <img src="{% static 'image/Thuong mai dien tu.jpg' %}" alt="" style="width: 250px;margin-bottom: 10px;">
+            <a href="https://drive.google.com/file/d/1NRDS9PqjdCDogeRMwEJtW10GJgPS_njy/view?usp=sharing" class="fs-3 "><i class="fad fa-arrow-to-bottom"></i></a> Tải xuống
+            <h3>Thương mại điện tử</h3>
+          </div>
+        </div>
+      </div>
+      <div class="content-book border py-3 mt-5">
+        <div class="sub-content-book d-flex justify-content-around text-center"  >
+          <div class="book-content">
+            <img src="{% static 'image/Kinh te vi mo.jpg' %}" alt="" style="width: 250px;margin-bottom: 10px;">
+            <a  target="_blank" href="https://drive.google.com/file/d/1NRDS9PqjdCDogeRMwEJtW10GJgPS_njy/view?usp=sharing" class="fs-3 "><i class="fad fa-arrow-to-bottom"></i></a> Tải xuống
+            <h3>Kinh tế vĩ mô</h3>
+          </div>
+          <div class="book-content">
+            <img src="{% static 'image/Tu tuong Ho Chi Minh.jpg' %}" alt="" style="width: 250px;margin-bottom: 10px;">
+            <a  target="_blank" href="https://drive.google.com/file/d/1NRDS9PqjdCDogeRMwEJtW10GJgPS_njy/view?usp=sharing" class="fs-3 "><i class="fad fa-arrow-to-bottom"></i></a> Tải xuống
+            <h3>Tư tưởng Hồ Chí Minh</h3>
+          </div>
+          <div class="book-content">
+            <img src="{% static 'image/Nghiep vu thuong mai.jpg' %}" alt="" style="width: 250px;margin-bottom: 10px;">
+            <a target="_blank"  href="https://drive.google.com/file/d/1tAD5wOXEXe8UodvG7PYx5PmMwUFSlL-o/view?usp=sharing" class="fs-3 "><i class="fad fa-arrow-to-bottom"></i></a> Tải xuống
+            <h3>Nghiệp vụ thương mại</h3>
+          </div>
+        </div>
+      </div>
+
+      </main>
+
+
+      <footer class="text-center bg-light text-muted pt-3 border-top border-2">
+
+        <section class="">
+          <div class="container text-center text-md-start mt-5">
+            <div class="row mt-3">
+              <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                <h6 class="text-uppercase fw-bold mb-4">
+                  <i class="fas fa-gem me-3"></i>PTIT SCom
+                </h6>
+                <p>
+                  Trang web dành riêng cho cộng đồng sinh viên Học viện Công nghệ Bưu chính Viễn thông.
+                  Nơi trao đổi, chia sẻ các thông tin, kinh nghiệm trong học tập và cuộc sống của sinh viên PTIT ^^
+                </p>
+              </div>
+    
+              <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                <h6 class="text-uppercase fw-bold mb-4">
+                  Địa chỉ          
+                </h6>
+                <p >HỌC VIỆN CÔNG NGHỆ BƯU CHÍNH VIỄN THÔNG:</p>
+                <p>
+                  <a href="#!" class="text-decoration-none ">
+                    Km10, Đường Nguyễn Trãi, Q.Hà Đông, Hà Nội</a>
+                </p>
+                <p>
+                  <a href="#!" class="text-decoration-none  ">Đường Man Thiện, P. Hiệp Phú, Q.9 TP Hồ Chí Minh</a>
+                </p>
+              </div>
+    
+              <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                <h6 class="text-uppercase fw-bold mb-4">
+                MẠNG XÃ HỘI
+                </h6>
+                <p>
+                  <a href="https://www.facebook.com/nghiemhunter1904/" class="text-decoration-none "><i class="fab fa-facebook-square"></i>: facebook</a> 
+                </p>
+                <p>
+                  <a href="https://www.instagram.com/nghiem_hunter_1904/" class="text-decoration-none "><i class="fab fa-instagram"></i>  : instagram</a>
+                </p>
+                <p>
+                  <a href="#!" class="text-decoration-none "><i class="fab fa-google"></i>: google</a>
+                </p>
+                <p>
+                  <a href="https://twitter.com/BLACKPINK" class="text-decoration-none "><i class="fab fa-twitter-square"></i> : twitter</a>
+                </p>
+              </div>
+    
+              <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                <h6 class="text-uppercase fw-bold mb-4">
+                  Contact
+                </h6>
+                <p><i class="fas fa-home me-3"></i>Hà Nội</p>
+                <p>
+                  <i class="fas fa-envelope me-3"></i>
+                  ptitscom.admin@gmail.com
+                </p>
+                <p><i class="fas fa-phone me-3"></i>+ 84 123 456 790</p>
+              </div>
+            </div>
+          </div>
+        </section>
+    
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+          © 2021 Copyright:
+          <a class="text-reset fw-bold" href="https://mdbootstrap.com/">TeamLoser</a>
+        </div>
+      </footer>   
+</body>
+</html>

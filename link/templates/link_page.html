@@ -1,0 +1,71 @@
+ {% extends "link_base.html" %}
+ 
+ {%load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/style_home.css' %}">
+ {%endblock%}
+ {% block content %}
+
+    <main>
+        <div class="select-clb">
+            <div class="dropdown mt-2 btn-drop text-end me-5">
+                <button class="btn dropdown-toggle fs-5 px-5 border-1 border-dark " type="button" id="dropdownMenuButton3"
+                  data-bs-toggle="dropdown" aria-expanded="false">
+                  Page sinh viên
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                  <li><a class="dropdown-item" href="{% url 'link' %}">Học viện </a></li>
+                  <li><a class="dropdown-item" href="{% url 'link_club' %}">Câu lạc bộ</a></li>
+                  <li><a class="dropdown-item active" href="{% url 'link_page' %}">Page sinh viên</a></li>
+                </ul>
+              </div>
+        </div>
+  
+        <div class="works-container anhtranglink">
+            <h2>Các Fanpage kết nối sinh viên học viện</h2>
+            <div class="works-content">
+                <div class="work">
+                  <a href=""><img src="{% static 'image/NHPTIT.jpg' %}" alt="" title="" /></a>
+                  <div class="work__text">
+                    <h3><a href="https://www.facebook.com/humansofptit.info" class="text-decoration-none">Humans of PTIT</a></h3>
+                    <p>
+                        Humans of PTIT- người PTIT với những câu chuyện nhiều sắc màu.
+                        Hãy đến và bày tỏ với nhau những câu chuyện của chính mình để chúng ta gần nhau hơn.
+                    </p>
+                    <a href="https://www.facebook.com/humansofptit.info"><p p class="fs-3"><i class="fab fa-facebook-square fs-1 mt-5"></i>@humansofptit.info</p></a>
+                    <a class="text-decoration-none" href=""><p class="fs-3"><i class="fas fa-envelope fs-1"></i>hop.infor@gmail.com</p></a>
+                  </div>
+            </div>
+            <div class="works-content">
+                <div class="work">
+                  <a href=""><img src="{% static 'image/PTITcfs.jpg' %}" alt="" title="" /></a>
+                  <div class="work__text">
+                    <h3><a href="https://www.facebook.com/PtitCfsOfficial" class="text-decoration-none">PTIT Confession</a></h3>
+                    <p>
+                        Thành lập từ năm 2013, PTIT Confessions Official:
+                        <br> - Là trang chia sẻ, tâm sự thầm kín và giấu tên dành cho Sinh viên PTIT
+                        <br> - Nơi giải tỏa những cảm xúc bất ngờ, tình cảm giấu kín, 
+                        nỗi buồn không tên hay những cú phốt không ngờ đến của Sinh viên PTIT...
+                    </p>
+                    <a href="https://www.facebook.com/PtitCfsOfficial"><p p class="fs-3"><i class="fab fa-facebook-square fs-1 mt-5"></i>@PtitCfsOfficial</p></a>
+                    <a class="text-decoration-none" href=""><p class="fs-3"><i class="fas fa-envelope fs-1"></i> ptitcfs.hanoi@gmail.com </p></a>
+                  </div>
+            </div>
+
+
+            <div class="works-content">
+                <div class="work">
+                  <a href=""><img src="{% static 'image/NHPTIT.jpg' %}" alt="" title="" /></a>
+                  <div class="work__text">
+                    <h3><a href="https://www.facebook.com/PtitCfsOfficial" class="text-decoration-none">Ngân hàng PTIT</a></h3>
+                    <p style="width: 100%;">
+                        Nơi cập nhật đề thi các năm, các ngành của PTIT. Đồng thời giải đáp các thông tin về thi cử của trường.
+                    </p>
+                    <a href="https://www.facebook.com/NganhangPTIT"><p p class="fs-3"><i class="fab fa-facebook-square fs-1 mt-5"></i>@NganhangPTIT</p></a>
+                    <a class="text-decoration-none" href=""><p class="fs-3"><i class="fas fa-envelope fs-1"></i> dieuthuviodaihoc@gmail.com</p></a>
+                  </div>
+            </div>
+        </div>
+    </main>
+
+{%endblock%}

@@ -1,0 +1,88 @@
+{% extends "document_base.html" %}
+ {% load static %}
+ {% block css%}
+    <link rel="stylesheet" href="{% static 'css/style_home.css' %}">
+ {% endblock %}
+ {% block content %}
+
+
+      <main>
+        <div class="select-clb">
+          <div class="dropdown mt-2 btn-drop text-end me-5">
+              <button class="btn dropdown-toggle fs-5 px-5 border-1 border-dark " type="button" id="dropdownMenuButton3"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                Kế toán
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                <li><a class="dropdown-item active" href="{% url 'document' %}">Công nghệ thông tin</a></li>
+                <li><a class="dropdown-item" href="{% url 'document_ATTT' %}">An toàn thông tin</a></li>
+                <li><a class="dropdown-item" href="{% url 'document_QTKD' %}">Quản trị kinh doanh</a></li>
+                <li><a class="dropdown-item" href="{% url 'document_DTVT' %}">Điện tử viễn thông</a></li>
+                <li><a class="dropdown-item" href="{% url 'document_MKT' %}">Marketing</a></li>
+                <li><a class="dropdown-item" href="{% url 'document_KT' %}">Kế toán</a></li>
+              </ul>
+            </div>
+        </div>
+
+      <div class="content-book border py-3 mt-5">
+        <div class="sub-content-book d-flex justify-content-around text-center"  >
+          <div class="book-content">
+            <img src="{% static 'image/CTDL.jpg' %}" alt="" style="width: 250px;margin-bottom: 10px;">
+            <a href="" class="fs-3 "><i class="fad fa-arrow-to-bottom"></i></a> Tải xuống
+            <h3>Cấu trúc dữ liệu và giải thuật</h3>
+          </div>
+          <div class="book-content">
+            <img src="{% static 'image/dai so.jpg' %}" alt="" style="width: 250px;margin-bottom: 10px;">
+            <a href="" class="fs-3 "><i class="fad fa-arrow-to-bottom"></i></a> Tải xuống
+            <h3>Đại Số </h3>
+          </div>
+          <div class="book-content">
+            <img src="{% static 'image/Triet 1.jpg' %}" alt="" style="width: 250px;margin-bottom: 10px;">
+            <a href="" class="fs-3 "><i class="fad fa-arrow-to-bottom"></i></a> Tải xuống
+            <h3>Những nguyên lý cơ bản của chủ nghĩa Mac Lênin </h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-book border py-3 mt-5">
+        <div class="sub-content-book d-flex justify-content-around text-center"  >
+          <div class="book-content">
+            <img src="{% static 'image/XSTK.jpg' %}" alt="" style="width: 250px;margin-bottom: 10px;">
+            <a href="" class="fs-3 "><i class="fad fa-arrow-to-bottom"></i></a> Tải xuống
+            <h3>Xác suất thống kê</h3>
+          </div>
+          <div class="book-content">
+            <img src="{% static 'image/giai tich.jpg' %}" alt="" style="width: 250px;margin-bottom: 10px;">
+            <a href="" class="fs-3 "><i class="fad fa-arrow-to-bottom"></i></a> Tải xuống
+            <h3>Giải Tích 1 </h3>
+          </div>
+          <div class="book-content">
+            <img src="{% static 'image/B1.jpg' %}" alt="" style="width: 250px;margin-bottom: 10px;">
+            <a href="" class="fs-3 "><i class="fad fa-arrow-to-bottom"></i></a> Tải xuống
+            <h3>Tiếng Anh B1</h3>
+          </div>
+        </div>
+      </div>
+      <div class="content-book border py-3 mt-5">
+        <div class="sub-content-book d-flex justify-content-around text-center"  >
+          <div class="book-content">
+            <img src="{% static 'image/CSDL.jpg' %}" alt="" style="width: 250px;margin-bottom: 10px;">
+            <a href="https://drive.google.com/file/d/1dVZDhlw7CwECLQuCkcEgnSPeomPwTn35/view?usp=sharing" target="_blank" class="fs-3 "><i class="fad fa-arrow-to-bottom"></i></a> Tải xuống
+            <h3>Cơ sở dữ liệu</h3>
+          </div>
+          <div class="book-content">
+            <img src="{% static 'image/HDH.jpg' %}" alt="" style="width: 250px;margin-bottom: 10px;">
+            <a href="https://drive.google.com/file/d/13zkaPj395k9nMAPw-CSRM_yTgYjr_Zcw/view?usp=sharing" target="_blank" class="fs-3 "><i class="fad fa-arrow-to-bottom"></i></a> Tải xuống
+            <h3>Hệ điều hành </h3>
+          </div>
+          <div class="book-content">
+            <img src="{% static 'image/MMT.jpg' %}" alt="" style="width: 250px;margin-bottom: 10px;">
+            <a href="https://drive.google.com/file/d/1NRDS9PqjdCDogeRMwEJtW10GJgPS_njy/view?usp=sharing" target="_blank" class="fs-3 "><i class="fad fa-arrow-to-bottom"></i></a> Tải xuống
+            <h3>Mạng Máy Tính</h3>
+          </div>
+        </div>
+      </div>
+
+      </main>
+
+{% endblock %}

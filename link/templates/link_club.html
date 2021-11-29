@@ -1,0 +1,102 @@
+{% extends "link_base.html" %}
+ 
+ {%load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/style_home.css' %}">
+ {%endblock%}
+ {% block content %}
+    <main>
+        <div class="select-clb">
+            <div class="dropdown mt-2 btn-drop text-end me-5">
+                <button class="btn dropdown-toggle fs-5 px-5 border-1 border-dark " type="button" id="dropdownMenuButton3"
+                  data-bs-toggle="dropdown" aria-expanded="false">
+                  Câu lạc bộ
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                  <li><a class="dropdown-item" href="{% url 'link' %}">Học viện </a></li>
+                  <li><a class="dropdown-item active" href="{% url 'link_club' %}">Câu lạc bộ</a></li>
+                  <li><a class="dropdown-item" href="{% url 'link_page' %}">Page sinh viên</a></li>
+                </ul>
+              </div>
+        </div>
+        <div class="works-container anhtranglink">
+            <h2>Các Câu lạc bộ của sinh viên học viện</h2>
+            <div class="works-content">
+                <div class="work">
+                  <a href=""><img src="{% static 'image/clbIT.jpg' %}" alt="" title="" /></a>
+                  <div class="work__text">
+                    <h3><a href="https://www.facebook.com/ITPTIT" class="text-decoration-none">CLB IT PTIT</a></h3>
+                    <p>
+                        Câu lạc bộ IT - khoa Công nghệ thông tin 1 - Học viện Công nghệ Bưu chính Viễn thông
+                        <br>Là cầu nối giữa các thành viên CLB với Khoa CNTT 1 và Học viện, giữa sinh viên với các cuộc thi, các cơ hội nghề nghiệp.
+                        <br>Là môi trường học tập sáng tạo, năng động, giúp đỡ thành viên CLB đạt thành tích cao trong học tập, phát triển tốt các kỹ năng nghề nghiệp.
+        
+                    </p>
+                    <a href="https://www.facebook.com/ITPTIT"><p p class="fs-3"><i class="fab fa-facebook-square fs-1 mt-5"></i>@ITPTIT</p></a>
+                    <a class="text-decoration-none" href=""><p class="fs-3"><i class="fas fa-envelope fs-1"></i>clb.it.ptit@gmail.com</p></a>
+                  </div>
+            </div>
+            <div class="works-content">
+                <div class="work">
+                  <a href=""><img src="{% static 'image/ClbLT.png' %}" alt="" title="" /></a>
+                  <div class="work__text">
+                    <h3><a href="https://proptit.com/" class="text-decoration-none">CLB Lập trình PTIT</a></h3>
+                    <p>
+                        CLB Lập Trình PTIT - Lập Trình từ trái tim
+                        <br>Là nơi giao lưu, đào tạo các môn lập trình và các môn học trong trường. 
+                        Nâng cao phong trào học lập trình của sinh viên trong trường, góp phần vào để đưa lập trình là một thế mạnh của học viện.
+                    </p>
+                    <a href="https://www.facebook.com/clubproptit"><p p class="fs-3"><i class="fab fa-facebook-square fs-1 mt-5"></i>@clubproptit</p></a>
+                    <a class="text-decoration-none" href=""><p class="fs-3"><i class="fas fa-envelope fs-1"></i>clblaptrinhptit@gmail.com</p></a>
+                  </div>
+            </div>
+            <div class="works-content">
+                <div class="work">
+                  <a href=""><img src="{% static 'image/ClbTaekwondo.jpg' %}" alt="" title="" /></a>
+                  <div class="work__text">
+                    <h3><a href="https://www.facebook.com/taekwondo.ptit" class="text-decoration-none">CLB Taekwondo PTIT</a></h3>
+                    <p>
+                        Nơi hội tụ niềm đam mê võ thuật, rèn luyện sức khỏe... và hơn cả "Đó là một gia đình"
+                        <br>Thời gian hoạt động: 18h Thứ 3, 5, CN
+                        Địa điểm: Sân ký túc xá B5 Học viện Công nghệ Bưu chính Viễn thông
+                    </p>
+                    <a href="https://www.facebook.com/taekwondo.ptit"><p p class="fs-3"><i class="fab fa-facebook-square fs-1 mt-5"></i>@taekwondo.ptit</p></a>
+                    <a class="text-decoration-none" href=""><p class="fs-3"><i class="fas fa-envelope fs-1"></i>taekwondo.ptit@gmail.com</p></a>
+                  </div>
+            </div>
+            <div class="works-content">
+                <div class="work">
+                  <a href=""><img src="{% static 'image/ClbVHNT.png' %}" alt="" title="" /></a>
+                  <div class="work__text">
+                    <h3><a href="https://www.facebook.com/Vhnt.ptit.hn" class="text-decoration-none">CLB Văn Hoá Nghệ Thuật</a></h3>
+                    <p>
+                        Bạn là sinh viên của Học viện Công nghệ Bưu chính Viễn thông. 
+                        Bạn đam mê và sở thích ca hát - nhảy múa, bạn muốn tìm bạn bè cùng sở thích với mình, bạn chưa có kĩ năng trên sân khấu, 
+                        bạn chưa đủ tự tin để thể hiện niềm đam mê của mình. 
+                        Đừng lo lắng, hãy gửi CV về trực tiếp cho chúng tôi, tất cả mong muốn trên của bạn đều được đáp ứng! 
+                        Chào đón bạn đến với "Câu lạc bộ Văn Hóa Nghệ Thuật PTIT"
+                    </p>
+                    <a href="https://www.facebook.com/Vhnt.ptit.hn"><p p class="fs-3"><i class="fab fa-facebook-square fs-1 mt-5"></i>@Vhnt.ptit.hn</p></a>
+                    <a class="text-decoration-none" href=""><p class="fs-3"><i class="fas fa-envelope fs-1"></i> 
+                        vhnt.ptit.hn@gmail.com</p></a>
+                  </div>
+            </div>
+            <div class="works-content">
+                <div class="work">
+                  <a href=""><img src="{% static 'image/SoMedia.jpg' %}" alt="" title="" /></a>
+                  <div class="work__text">
+                    <h3><a href="https://www.facebook.com/somedia.vn.2016" class="text-decoration-none">CLB Sổ Media</a></h3>
+                    <p>
+                        Sổ Media là nơi tụ hội của những con người yêu thích, 
+                        đam mê lĩnh vực nhiếp ảnh, quay phim, truyền thông.
+                    </p>
+                    <a href="https://www.facebook.com/somedia.vn.2016"><p p class="fs-3"><i class="fab fa-facebook-square fs-1 mt-5"></i>@somedia.vn.2016</p></a>
+                    <a class="text-decoration-none" href=""><p class="fs-3"><i class="fas fa-envelope fs-1"></i> 
+                        clbsomediaptit@gmail.com</p></a>
+                  </div>
+            </div>
+        </div>
+  
+    </main>
+
+ {%endblock%}

@@ -1,0 +1,85 @@
+ {% extends "link_base.html" %}
+ 
+ {%load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/style_home.css' %}">
+ {%endblock%}
+ {% block content %}
+    <main>
+        <div class="select-clb">
+            <div class="dropdown mt-2 btn-drop text-end me-5">
+                <button class="btn dropdown-toggle fs-5 px-5 border-1 border-dark " type="button" id="dropdownMenuButton3"
+                  data-bs-toggle="dropdown" aria-expanded="false">
+                  Học viện
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                  <li><a class="dropdown-item active" href="{% url 'link' %}">Học viện </a></li>
+                  <li><a class="dropdown-item" href="{% url 'link_club' %}">Câu lạc bộ</a></li>
+                  <li><a class="dropdown-item" href="{% url 'link_page' %}">Page sinh viên</a></li>
+                </ul>
+              </div>
+        </div>
+  
+        <div class="works-container anhtranglink">
+            <h2>Các trang liên quan đến Học viện</h2>
+            <div class="works-content">
+              <div class="work">
+                <a href=""><img src="{% static 'image/ptit.jpg' %}" alt="" title="" width="300px" height="300px"/></a>
+                <div class="work__text">
+                  <h3><a href="https://portal.ptit.edu.vn/" class="text-decoration-none">Trang chủ PTIT</a></h3>
+                  <p>
+                    Đây là trang chủ chính thức và duy nhất của Học viện do Học viện quản lý và chịu trách nhiệm.
+                  </p>
+                  <a href="https://www.facebook.com/HocvienPTIT"><p p class="fs-3"><i class="fab fa-facebook-square fs-1 mt-5"></i>@HocvienPTIT</p></a>
+                  <a class="text-decoration-none" href=""><p class="fs-3"><i class="fas fa-envelope fs-1"></i> ctsv@ptit.edu.vn</p></a>
+                </div>
+              </div>
+      
+              <div class="works-content">
+                <div class="work">
+                  <a href=""><img src="{% static 'image/phong giao vu.jpg' %}" alt="" title=""  width="300px" height="300px"/></a>
+                  <div class="work__text">
+                    <h3><a href="https://qldt.ptit.edu.vn" class="text-decoration-none">Trang quản lí đào tạo</a></h3>
+                    <p>
+                      Đây là trang thông tin chính thức của học viện về các vấn đề liên quan đến học tập của sinh viên.
+                      Đồng thời là cũng là nơi các bạn xem thời khoá biểu, điểm, lịch thi...
+                    </p>
+                    <a href="https://www.facebook.com/phonggiaovu"><p p class="fs-3"><i class="fab fa-facebook-square fs-1 mt-5"></i>@phonggiaovu</p></a>
+                    <a class="text-decoration-none" href=""><p class="fs-3"><i class="fas fa-envelope fs-1"></i>giaovu@ptit.edu.vn</p></a>
+                  </div>
+                </div>
+      
+                <div class="works-content">
+                    <div class="work">
+                      <a href=""><img src="{% static 'image/ttkt.jpg' %}" alt="" title=""  width="300px" height="300px"/></a>
+                      <div class="work__text">
+                        <h3><a href="https://portal.ptit.edu.vn/ttkt/" class="text-decoration-none">Trung tâm khảo thí & ĐBCLGD</a></h3>
+                        <p>
+                          Trang thông tin chính thức của Trung tâm Khảo thí & đảm bảo chất lượng giáo dục 
+                          - PTIT Hà Nội. 
+                          Ở đây sinh viên có thể hỏi đáp các thắc mắc về quy chế thi, đánh giá chất lượng
+                          học tập của mình.
+                        </p>
+                        <a href="https://www.facebook.com/ttkt.ptit"><p p class="fs-3"><i class="fab fa-facebook-square fs-1 mt-5"></i>@ttkt.ptit</p></a>
+                        <a class="text-decoration-none" href=""><p class="fs-3"><i class="fas fa-envelope fs-1"></i> khaothi@ptit.edu.vn</p></a>
+                      </div>
+                    </div>
+            </div>
+
+            <div class="works-content">
+                <div class="work">
+                  <a href=""><img src="{% static 'image/thuvien.jpg' %}" alt="" title=""  width="300px" height="300px"/></a>
+                  <div class="work__text">
+                    <h3><a href="https://portal.ptit.edu.vn/tttv" class="text-decoration-none">Thư viện PTIT</a></h3>
+                    <p>
+                      Trang chính thức của thư viện học viện Công nghệ Bưu chính Viễn thông.
+                      Ở đây sinh viên có thể tra cứu tài liệu số liên quan đến chương trình đào tạo của học viện.
+                      Đồng thời dễ dàng làm thủ tục mượn trả sách thư viện.
+                    </p>
+                    <a href="https://www.facebook.com/ptitl/"><p p class="fs-3"><i class="fab fa-facebook-square fs-1 mt-5"></i>@ptitl</p></a>
+                    <a class="text-decoration-none" href=""><p class="fs-3"><i class="fas fa-envelope fs-1"></i>ilc@ptit.edu.vn</p></a>
+                  </div>
+                </div>
+            </div>
+    </main>
+{% endblock %}
