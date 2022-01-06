@@ -35,4 +35,4 @@ sau đó cài Pillow bằng câu lệnh(nếu chưa có)
 
 4. Tạo một vài đối tượng thử nghiệm của mỗi loại.
 
-5. Mở tab tới localhost:8000 (http://127.0.0.1:8000/admin/ ) để xem trang web chính
+5. Mở tab tới localhost:8000 (http://127.0.0.1:8000 ) để xem trang web chính
